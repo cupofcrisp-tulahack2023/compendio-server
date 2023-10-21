@@ -1,0 +1,21 @@
+{% extends "personal/base.html" %}
+
+{% block title %}
+  Board #{{ board.id }}
+{% endblock %}
+
+{% block body %}
+	<h3>{{ board.title }}</h3>
+    <p>Тут будут конспекты</p>
+  <div>
+    <a
+      class="btn btn-danger"
+      href="{{ url_for('personal_app.confirm_delete', board_id=board.id) }}"
+    >Удалить доску</a>
+
+    <a
+{#      class="link-underline link-underline-opacity-0"#}
+      class="btn btn-primary"
+       href="{{ url_for('personal_app.list') }}">Назад</a>
+  </div>
+{% endblock %}

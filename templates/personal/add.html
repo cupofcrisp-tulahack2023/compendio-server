@@ -1,0 +1,30 @@
+{% extends 'personal/base.html' %}
+
+{% block title %}
+
+{% endblock %}
+
+{% block body %}
+  <h3>Добавить группу</h3>
+<div id="form-block">
+    <form method="post" class="row row-cols-1">
+      <div class="col">
+        <label
+          class="form-label"
+          for="field-name"
+        >Title</label>
+        <input
+          id="field-name"
+          class="form-control"
+          name="board-title"
+          type="text"
+          placeholder="Title"
+          required="required"
+        >
+      </div>
+</div>
+<div class="col">
+        <input class="my-2 my-md-3 btn btn-light" type="submit" value="Create">
+</div>
+
+{% endblock %}

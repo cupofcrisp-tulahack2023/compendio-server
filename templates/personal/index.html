@@ -1,0 +1,28 @@
+{% extends "personal/base.html" %}
+
+{% block head %}
+  {#  <link#}
+  {#    rel="stylesheet"#}
+  {#    href="{{ url_for('static', filename="css/main.css") }}"#}
+  {#  >#}
+{% endblock %}
+
+{% block title %}
+  All
+{% endblock %}
+
+{% block body %}
+  <h3>Мои группы</h3>
+  <ul class="list-group my-2">
+    {% for board in boards %}
+      <li class="list-group-item"><a
+        {#        class="text-decoration-none"#}
+        class="link-underline link-underline-opacity-0 link-underline-opacity-75-hover"
+        href="{{ url_for('personal_app.detail', board_id=board.id) }}"
+      >{{ board.title }}</a></li>
+    {% endfor %}
+  </ul>
+  <div>
+    <a href="{{url_for('personal_app.add')}}">Добавить группу</a>
+  </div>
+{% endblock %}
